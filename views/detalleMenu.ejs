@@ -1,0 +1,33 @@
+<%- include('./partials/header') %>
+
+    <!-- Page content -->
+    <div class="ps-content">
+
+        <!-- Menu Section -->
+        <div class="ps-row ps-padding-64" id="menu">
+          <div class="ps-col l6 ps-padding-large">
+            
+            
+            <h1 class="ps-center"><%= menu[idProducto].nombre %></h1>
+            <br />
+            <% if (menu[idProducto].descripcionLarga !== '') { %>
+                <h4><%= menu[idProducto].descripcionLarga %></h4>
+            <% } else { %>
+                <h4>Plato típico</h4>
+            <%  } %>
+            <p class="ps-text-grey">
+                <%= menu[idProducto].precio %>
+            </p>
+          </div>
+  
+          <div class="ps-col l6 ps-padding-large ps-img-menu">
+            <img
+              src= <%= menu[idProducto].imgsrc %>
+              class="ps-round ps-image ps-opacity-min"
+              alt= <%= menu[idProducto].nombre %>
+            />
+          </div>
+        </div>
+
+<%- include('./partials/footer') %>
+</html>
